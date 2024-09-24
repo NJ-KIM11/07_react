@@ -8,3 +8,4 @@ const Test =()=>{
 }
 
 export default Test;
+// const 앞에 export 추가로도 가능
