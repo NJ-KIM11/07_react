@@ -24,15 +24,22 @@ export const TimeApp = ()=>{
             })}
         </>
     )
-
 }
 
 const Timer = ({id,onDelete})=>{
     const[second, setSecond]= useState(0);
     const[stop, setStop] = useState(false);
+    const[buttonText, setButtonText] = useState("stop");
+    let a=false;
+
 
     const onClickHandler = ()=>{
-        setStop(!stop);
+        
+        setStop(()=>{
+            a=!stop;
+            (a===true)? setButtonText("go") : setButtonText("stop");
+        });
+        
     };
 
     useEffect(()=>{
@@ -40,18 +47,18 @@ const Timer = ({id,onDelete})=>{
                 setSecond(value => value+1);
 
             }, 1000);
-            if(stop===true){
+            if(a===true){
                 clearInterval(interval);
             }
             return ()=> clearInterval(interval);
-       
+    
 
-    },[stop])
+    },[a])
 
     return(
         <>
             <label>타이머 {id}: {second}초</label>
-            <button onClick={onClickHandler}>stop</button>
+            <button onClick={onClickHandler}>{buttonText}</button>
             <br/>
             <button onClick={()=>onDelete(id)}>삭제</button>
             <br/>

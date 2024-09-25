@@ -3,7 +3,7 @@ import { useEffect, useState } from "react"
 
 export const ProfileSave = () =>{
 
-    const [user, setUser]= useState({username: "홍길동", email: "hong@example.com"});
+    const [user, setUser]= useState({username: "", email: ""});
     // const [userName, setUserName] = useState("");
     // const [email, setEmail] = useState("");
     const [savedUser, setSavedUser] = useState({savedName:'', savedEmail:''});
@@ -28,11 +28,16 @@ export const ProfileSave = () =>{
     }
 
     useEffect(()=>{
-        console.log("username 또는 email 변경 감지");
-        console.log(user.username);
-        console.log(user.email);
-    },[user.username, user.email]);
+        setTimeout(()=>setUser({
+            username: "홍길동",
+            email: "hong@example.com"
+        }), 1000)
+    },[]);
 
+    useEffect(()=>{
+        console.log("username 또는 email 변경 감지");
+        console.log(`이름: ${user.username}, 이메일: ${user.email}`);
+    },[user.username, user.email]);
 
     return(
         <>
