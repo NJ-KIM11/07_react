@@ -16,6 +16,17 @@ import { LocationComponent } from "./03_useMemo/04_object-type-problem";
 import { DoubleContainer, SquareCalculator } from "./03_useMemo/UseMemoPractice";
 import SquareCalculator1 from "./03_useMemo/WithoutUseMemo";
 import { ProductList } from "./03_useMemo/ProductList";
+import { CallBackProblem } from "./04_useCallback/01_problem";
+import FunctionMemoization from "./04_useCallback/02_function-memoization";
+import CallBackComponent from "./04_useCallback/03_components";
+import { CounterRef } from "./05_useRef/01_problem";
+import { UseRefCounter } from "./05_useRef/02_useRef";
+import LoginComponent from "./05_useRef/03_inputRef";
+import Page from "./06_useContext/01_props-dribbling";
+import ContextContainer from "./06_useContext/02_useContext";
+import HooksProblem from "./07_custom-hooks/01_problem";
+import { CustomHooks } from "./07_custom-hooks/02_custom-hooks";
+import BoardContainer from "./05_useRef/Board";
 
 function App() {
   const [message,setMessage]= useState("안녕하세요");
@@ -39,7 +50,18 @@ function App() {
       {/* <LocationComponent/> */}
       {/* <SquareCalculator/> */}
       {/* <SquareCalculator1/> */}
-      <ProductList/>
+      {/* <ProductList/> */}
+      {/* <CallBackProblem/> */}
+      {/* <FunctionMemoization/> */}
+      {/* <CallBackComponent/> */}
+      {/* <CounterRef/> */}
+      {/* <UseRefCounter/> */}
+      {/* <LoginComponent/> */}
+      {/* <Page/> */}
+      {/* <ContextContainer/> */}
+      {/* <HooksProblem/> */}
+      {/* <CustomHooks/> */}
+      <BoardContainer/>
     </>
   );
 }

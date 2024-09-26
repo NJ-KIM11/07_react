@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 
 
 export const ProductList = ()=>{
@@ -15,6 +15,7 @@ export const ProductList = ()=>{
       ];
 
     const [list, setList] = useState([]);
+    const [count, setCount]= useState(0);
 
     const onClickHandler = id => {
         if(id==="all"){
@@ -24,9 +25,15 @@ export const ProductList = ()=>{
         }
     }
 
-    const resultList = list.map((li)=>{
-        return <li>{li.name}</li>
-    })
+    useEffect(()=>{
+        setCount(list.length);
+    },[list])
+
+    const resultList = useMemo(()=>{
+        return list.map((li)=>{
+            return <li>{li.name}</li>
+        })
+    },[list]);
 
     
 
@@ -37,7 +44,7 @@ export const ProductList = ()=>{
             <button id="전자제품" onClick={e=>onClickHandler(e.target.id)}>전자제품</button>
             <button id="의류" onClick={e=>onClickHandler(e.target.id)}>의류</button>
             <button id="가전제품" onClick={e=>onClickHandler(e.target.id)}>가전제품</button>
-            <h2>총 8개의 상품</h2>
+            <h2>총 {count}개의 상품</h2>
             <ul>
                 {resultList}
             </ul>

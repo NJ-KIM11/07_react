@@ -23,7 +23,7 @@ const UseEffectUpdate = () =>{
         <>
             <label>userName : </label>
             <input type="text" name="username" onChange={onChangeHandler}/>
-            <br/>
+            <br/> 
             <label>password : </label>
             <input type="password" name="password" onChange={onChangeHandler}/>
             <h3>username : {user.username}</h3>

@@ -24,9 +24,9 @@ const reducer = (state, action)=> {
 
     switch(action.type){
         case 'DECREMENT':
-            return {value:state.value-1}
+            return {value: state.value-1}
         case 'INCREMENT':
-            return {value:state.value+1}
+            return {value: state.value+1}
         default:
             return state;
     }
@@ -35,6 +35,7 @@ const reducer = (state, action)=> {
 const UseReducerBasic = ()=>{
     
     const [state, dispatch]= useReducer(reducer,{value:0});
+    // 상태, 함수  useReducer()에 넣어 줄때는 순서를 바꿔서 넣어준다.(함수, 상태)
 
     return(
         <>

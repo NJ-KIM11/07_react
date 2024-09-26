@@ -30,14 +30,14 @@ const Timer = ({id,onDelete})=>{
     const[second, setSecond]= useState(0);
     const[stop, setStop] = useState(false);
     const[buttonText, setButtonText] = useState("stop");
-    let a=false;
-
 
     const onClickHandler = ()=>{
         
         setStop(()=>{
-            a=!stop;
-            (a===true)? setButtonText("go") : setButtonText("stop");
+            const a=!stop;
+            if(a===true){
+                setButtonText("go");
+            }else{setButtonText("stop")};
         });
         
     };
@@ -47,13 +47,13 @@ const Timer = ({id,onDelete})=>{
                 setSecond(value => value+1);
 
             }, 1000);
-            if(a===true){
+            if(stop===true){
                 clearInterval(interval);
             }
             return ()=> clearInterval(interval);
     
 
-    },[a])
+    },[stop])
 
     return(
         <>

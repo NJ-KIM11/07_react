@@ -26,8 +26,8 @@ export const Input = ()=>{
             <input type="password" name="passcheck" onChange={onChangeHandler}/>
             
             <div>
-                <h3>입력한 이름 : {state.pass}</h3>
-                <h3>입력한 닉네임 : {state.passcheck}</h3>
+                <h3>입력한 비번 : {state.pass}</h3>
+                <h3>비번 확인 : {state.passcheck}</h3>
             </div>
         </>
     )

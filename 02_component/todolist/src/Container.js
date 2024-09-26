@@ -39,7 +39,7 @@ const Container = ({boxNames,setBoxNames,inputColorText}) => {
         color : inputColorText,
         cursor : "pointer",
         listStyle : "none",
-        paddingLeft : "0px",
+        paddingLeft : "0px"
       };
 
     return (
