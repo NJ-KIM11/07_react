@@ -27,3 +27,5 @@ export const CallBackProblem = ()=>{
     )
     
 }
+
+// 함수가 자식 컴포넌트에 많이 뿌려졌을때 모두 다시 렌더링 되는 문제..

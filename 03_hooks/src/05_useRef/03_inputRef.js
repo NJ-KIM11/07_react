@@ -9,10 +9,10 @@ const LoginComponent = ()=>{
     });
 
 
-    // useEffect(()=>{
-    //     console.log(userNameRef.current);
-    //     userNameRef.current.focus();
-    // },[])
+    useEffect(()=>{
+        console.log(userNameRef.current);
+        userNameRef.current.focus();
+    },[])
 
     const userNameRef = useRef();
 
@@ -32,7 +32,7 @@ const LoginComponent = ()=>{
         <>
             <input type="text" name="username"
                     placeholder="이름" onChange={onChangeHandler}
-                    value={form.username} />
+                    value={form.username} ref={userNameRef}/>
                 
             <br/>
 

@@ -26,7 +26,7 @@ import Page from "./06_useContext/01_props-dribbling";
 import ContextContainer from "./06_useContext/02_useContext";
 import HooksProblem from "./07_custom-hooks/01_problem";
 import { CustomHooks } from "./07_custom-hooks/02_custom-hooks";
-import BoardContainer from "./05_useRef/Board";
+import BoardContainer from "./05_useRef/BoardQuestion/Board";
 
 function App() {
   const [message,setMessage]= useState("안녕하세요");

@@ -15,11 +15,16 @@ export const UseRefCounter = ()=>{
 
     console.log("useRefCounter 렌더링 됨..");
 
+
+
+
     const [count, setCount] = useState(0);
 
     let variable = 0;
 
     const countRef = useRef(0);
+
+
 
     const increaseCount = ()=>{
         setCount(count+1);
@@ -34,6 +39,12 @@ export const UseRefCounter = ()=>{
         countRef.current = countRef.current+1;
         console.log("카운트Ref : " + countRef.current);
     }
+
+    // state 인 count는 렌더링을 발생시킨다..
+    // 기본자료형인 variable 은 렌더링을 발생시키지 않는다..
+    // 버튼을 눌러서 variable 을 증가시켜도 렌더링이 발생되지 않아 화면에 적용되지 않는다.
+
+
 
     return(
         <>
