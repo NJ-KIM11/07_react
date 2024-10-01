@@ -1,11 +1,14 @@
-import { useEffect, useState } from "react";
+import { Fragment, useEffect, useState } from "react";
+import Article from "./Article";
+import style from "./Article.module.css";
 
 
 const NewsContainer = ()=>{
 
     const API_KEY = 'c775d95ed54a4300a8d5aa1a84d4a46a';
     const country = 'us';
-    const [result, setResult]= useState({});
+    
+    const [articles, setArticles] = useState([]);
 
 
     const getNews =()=>{
@@ -18,24 +21,26 @@ const NewsContainer = ()=>{
 
     useEffect(()=>{
         async function news() {
-            const result1 = await getNews();
-            console.log(result1);
-            setResult(result1);
+            const result = await getNews();
+            console.log(result);
+            setArticles(result.articles);
+
+            
         }
         news();
-        console.log(result);
+        
     },[]);
+    
+    
     
 
     return(
         <>
-            <h1>NewsApi</h1>
-            {/* <ul>
-                {result.map((article)=>{
-                    return <li>{article}</li>
+            <div className={style.newsContainer}>    
+                {articles.map((article)=>{
+                    return(<Article article={article}/>)
                 })}
-            </ul> */}
-            {/* <p>{result}</p> */}
+            </div>
         </>
     )
 

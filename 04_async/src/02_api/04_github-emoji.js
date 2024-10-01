@@ -10,7 +10,7 @@ const SearchBox=({setImgUrl})=>{
         fetch("https://api.github.com/emojis")
         .then(r=>r.json())
         .then(result => setImgUrl(result[emojiName]));
-        // 대괄호 표기법 : 객체의 key에 접근할때 
+        // 대괄호 표기법 : 객체의 key에 접근할때 . 으로 접근하면 문자열만 가능 [] 로 접근하면 문자열이 아닌 기호나 숫자도 가능
     }
 
     return(

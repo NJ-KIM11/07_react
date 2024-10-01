@@ -13,6 +13,8 @@ const ItemList =()=>{
         .then(response => response.json())
         .then(data => setUsers(data));
     },[])
+    // 두번째 인자로 빈 문자열을 주었기 때문에 마운트 시점 한번만 실행!!
+    // useEffect 를 안쓰면 렌더링 시점마다 매번 가져오기 때문에 redundant
 
     return(
         <div>

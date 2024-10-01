@@ -43,5 +43,5 @@ increase(0).then(number=>{
 }).then(number=>{
     console.log(number);
     return increase(number);
-});
+}).catch(e=>console.log(e,"가 발생했네"));
 

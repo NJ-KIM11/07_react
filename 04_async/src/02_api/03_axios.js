@@ -8,7 +8,7 @@ const callApi = () =>{
 const axiosCall = ()=>{
 
     axios.get("https://jsonplaceholder.typicode.com/users")
-    .then(res =>console.log(res));
+    .then(res =>console.log(res.data));
     // axios는 json으로 바꿔줄 필요 없이 json 형식으로 바로 바꿔준다..
     // .data 로 body의 json에 접근한다..
 }
