@@ -1,17 +1,11 @@
-import {useNavigate} from "react-router-dom";
+import {Link} from "react-router-dom";
 
-const MenuList = ({menu})=>{
-
-    const navigate = useNavigate();
-
-    const onClickHandler =()=>{
-        navigate(`/menu/describe?menuId=${menu.id}`);
-    }
+const MenuList = ({menu})=>{  
 
     return(
-        <>
-            <li onClick={onClickHandler}>{menu.name} - \{menu.price}</li>
-        </>                       
+        <Link to={`/menu/${menu.id}`}>
+            <li>{menu.name} - \{menu.price}</li>
+        </Link>                       
     )
 }
 export default MenuList;

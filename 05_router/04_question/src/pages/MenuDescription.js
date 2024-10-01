@@ -1,21 +1,21 @@
-import {useSearchParams} from "react-router-dom";
-import {useState, useEffect} from "react";
+import {useParams} from "react-router-dom";
+import {useMemo} from "react";
 import { getMenuDetail } from "../api/MenuApi";
 import {useNavigate} from "react-router-dom";
 
-const MenuDescription =()=>{
+const MenuDescription =({orderList, setOrderList})=>{
 
-    const [id] = useSearchParams();
-    const menuId = id.get("menuId");
-    const [menu, setMenu] = useState({});
+    const {id} = useParams();    
     const navigate = useNavigate();
 
-    useEffect(()=>{
-        setMenu(getMenuDetail(menuId));
-    },[]);
+    const menu = useMemo(()=>{
+        return getMenuDetail(id);
+    },[id]);
+
 
     const onClickAdd =()=>{
-        navigate(`/orderconfirm?menuId=${menu.id}`);
+        setOrderList(orderList => [...orderList, menu]);
+        navigate(`/orderconfirm`);
     }
 
     const onClickBack=()=>{
