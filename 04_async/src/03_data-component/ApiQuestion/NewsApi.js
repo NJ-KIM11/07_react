@@ -1,4 +1,4 @@
-import { Fragment, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import Article from "./Article";
 import style from "./Article.module.css";
 
@@ -17,33 +17,27 @@ const NewsContainer = ()=>{
                 .then(response => response.json())
         )
     }
-    
 
     useEffect(()=>{
         async function news() {
             const result = await getNews();
             console.log(result);
-            setArticles(result.articles);
-
-            
+            setArticles(result.articles);            
         }
         news();
         
     },[]);
-    
-    
-    
+       
 
     return(
         <>
-            <div className={style.newsContainer}>    
+            <div className={style.newsContainer}>
                 {articles.map((article)=>{
                     return(<Article article={article}/>)
                 })}
             </div>
         </>
     )
-
 }
 
 export default NewsContainer;
